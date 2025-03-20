@@ -29,12 +29,14 @@
         }
 
 
-        /* Estilo para o link ativo na navegação */
+        /* Estilo para o link ativo na navegação
         nav a.active-link {
         background-color: #16A085;
         color: #ffffff;
         border-radius: 5px;
-        }
+        } */
+
+
         /* Estilos gerais */
         body {
             font-family: 'Roboto', sans-serif;
@@ -155,7 +157,7 @@
             background-color: #34495E;
             display: flex;
             justify-content: center;
-            padding: 10px;
+            padding: 3px;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -171,7 +173,7 @@
             text-transform: uppercase;
             transition: background-color 0.3s ease;
             text-decoration: none;
-            margin: 0 15px; /* Adiciona espaço entre os links de navegação */
+            margin: 0 10px; /* Adiciona espaço entre os links de navegação */
         }
         nav a:hover {
             background-color: #16A085;
@@ -181,7 +183,7 @@
 
         /* Seções */
         section {
-            padding: 14px;
+            padding: 12px;
             margin: 0 auto;
             max-width: 1200px;
             /* display: none; Inicialmente todas as seções são ocultas */
@@ -296,7 +298,7 @@
     nav {
         flex-direction: column;
         align-items: center;
-        padding: 30px;
+        padding: 40px;
     }
 
     nav a {
@@ -411,21 +413,21 @@
         <h1>Guilherme Cerqueira</h1>
         <p>Especialista em Análise de Dados | Transformando Dados em Insights Estratégicos</p>
 
-        <!-- Adicionando mais espaço -->
+         Adicionando mais espaço
         <div class="contact-icons">
-            <a href="https://www.linkedin.com/in/guilhermecerqueira" target="_blank">
+            <!-- <a href="https://www.linkedin.com/in/guilhermecerqueira" target="_blank">
                 <img src="https://cdn-icons-png.flaticon.com/256/174/174857.png" alt="LinkedIn" width="40" alt="Linkedin" title="Linkedin" />
-            </a>
+             </a> -->
             <a href="mailto:guilherme@email.com">
                 <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="40" />
             </a>
             <a href="https://wa.me/SEU_NUMERO" target="_blank">
                 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="40" />
-            </a>
+            </a> 
 
 
             
-        </div>
+        </div> 
     </div>
 </header>
 
@@ -451,7 +453,18 @@
 
     <!-- Navegação -->
     <nav>
-        <a href="javascript:void(0);" onclick="showSection('sobre')">Quem Sou Eu</a>
+
+         
+        <a href="https://www.linkedin.com/in/guilhermecerqueira" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/256/174/174857.png" alt="LinkedIn" width="25" alt="Linkedin" title="Linkedin" />
+        </a> 
+        <!-- <a href="mailto:guilherme@email.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="25" />
+        </a>  -->
+        <!-- <a href="https://wa.me/SEU_NUMERO" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="25" />
+        </a> -->
+        <a href="javascript:void(0);" onclick="showSection('sobre')">Sobre Mim</a>
         <a href="javascript:void(0);" onclick="showSection('formacao')">Formação</a>
         <a href="javascript:void(0);" onclick="showSection('ferramentas')">Ferramentas</a>
         <a href="javascript:void(0);" onclick="showSection('projetos')">Projetos</a>
@@ -460,7 +473,7 @@
 
     <!-- Seção Quem Sou Eu -->
     <section id="sobre">
-        <h2>Quem Sou Eu</h2>
+        <h2>Sobre Mim</h2>
         <p>Sou Analista de Experiência do Cliente com foco em análise e tratamento de dados, atuando há quase dois anos na interpretação de informações operacionais para embasar decisões estratégicas. Atualmente, curso uma pós-graduação em Data Analytics pela FIAP, onde aprimoro meus conhecimentos em estatística, machine learning, SQL e Python.
 
             Minha atuação envolve o tratamento e análise de dados, criação de dashboards no Power BI (com uso de DAX, M, CSS e HTML) e desenvolvimento de designs visuais no Figma para garantir uma comunicação clara e impactante. Também sou responsável por configurar e monitorar pesquisas de satisfação na Qualtrics, além de colaborar com áreas estratégicas como operações e atendimento, sempre colocando a experiência do cliente como prioridade.
@@ -751,7 +764,7 @@
                     toggleButtonPython.textContent = "Ocultar Projetos Python";
                 } else {
                     projectListPython.style.display = "none";
-                    toggleButtonPython.textContent = "Mostrar Projetos no Python ";
+                    toggleButtonPython.textContent = "Mostrar Projetos no Python";
                 }
             }
         }
