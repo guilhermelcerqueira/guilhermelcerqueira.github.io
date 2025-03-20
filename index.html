@@ -7,6 +7,12 @@
     <title>Guilherme Cerqueira - Portfólio de Análise de Dados</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Estilo para o link ativo na navegação */
+        nav a.active-link {
+        background-color: #16A085;
+        color: #ffffff;
+        border-radius: 5px;
+        }
         /* Estilos gerais */
         body {
             font-family: 'Roboto', sans-serif;
@@ -94,10 +100,12 @@
         }
         nav a {
             color: #BDC3C7;
-            padding: 15px;
+            padding: 12px;
             font-size: 1.1em;
             text-transform: uppercase;
             transition: background-color 0.3s ease;
+            text-decoration: none;
+            margin: 0 15px; /* Adiciona espaço entre os links de navegação */
         }
         nav a:hover {
             background-color: #16A085;
@@ -160,52 +168,52 @@
         }
 
  /* Seção de Contato */
-#contato {
-    width: 80%; /* Faz a seção ocupar mais espaço na tela */
-    margin: 0 auto; /* Centraliza na página */
-}
+        #contato {
+            width: 80%; /* Faz a seção ocupar mais espaço na tela */
+            margin: 0 auto; /* Centraliza na página */
+        }
 
-/* Formulário de Contato */
-.contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%; /* Agora ocupa toda a largura da seção */
-}
+        /* Formulário de Contato */
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%; /* Agora ocupa toda a largura da seção */
+        }
 
-.contact input, .contact textarea {
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    width: 100%;
-    font-family: inherit;
-}
+        .contact input, .contact textarea {
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 100%;
+            font-family: inherit;
+        }
 
-/* Ajusta a altura para os campos ficarem uniformes */
-.contact input {
-    height: 50px;
-}
+        /* Ajusta a altura para os campos ficarem uniformes */
+        .contact input {
+            height: 50px;
+        }
 
-.contact textarea {
-    height: 150px;
-    resize: none;
-}
+        .contact textarea {
+            height: 150px;
+            resize: none;
+        }
 
-.contact button {
-    padding: 15px;
-    background-color: #16A085;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+        .contact button {
+            padding: 15px;
+            background-color: #16A085;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-.contact button:hover {
-    background-color: #1ABC9C;
-}
+        .contact button:hover {
+            background-color: #1ABC9C;
+        }
 
         /* Rodapé */
         footer {
@@ -216,6 +224,7 @@
         }
 /* Responsividade - Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
+    /* Navegação */
     nav {
         flex-direction: column;
         align-items: center;
@@ -227,35 +236,48 @@
         font-size: 1.2em;
     }
 
+    /* Cabeçalho */
     header .profile-image {
         width: 100px;
         height: 100px;
+        max-width: 100%; /* Garantir que a imagem não ultrapasse a largura */
     }
 
     header h1 {
         font-size: 2em;
+        text-align: center;
     }
 
+    /* Seção de Contato */
     #contato {
         width: 90%;
-        padding: 0 10px; /* Adiciona padding para não ficar tão grudado nas laterais */
+        padding: 0 10px;
     }
 
-    /* Ajustando a largura dos campos do formulário */
+    /* Ajustando o formulário de contato */
     .contact form {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
     }
 
     .contact input, .contact textarea, .contact button {
         font-size: 1em;
         padding: 12px;
-        width: 100%; /* Garante que os campos ocupem 100% da largura */
+        width: 100%; /* Garantir que os campos ocupem 100% da largura */
+        box-sizing: border-box; /* Garantir que o padding não afete a largura */
     }
 
     .contact button {
         padding: 12px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        cursor: pointer;
     }
 
+    /* Ajuste na área de projetos */
     .tools {
         flex-direction: column;
         align-items: center;
@@ -270,22 +292,41 @@
     .tool img {
         width: 50px;
         height: 50px;
+        max-width: 100%;
     }
 
+    /* Página de Projetos */
     .projects ul {
-        grid-template-columns: 1fr; /* Uma coluna no mobile */
-        padding: 0 10px; /* Adiciona espaçamento nas laterais */
+        display: grid;
+        grid-template-columns: 1fr; /* Apenas uma coluna no mobile */
+        gap: 20px; /* Espaço entre os itens */
+        padding: 0 10px;
     }
 
     .projects ul li {
         padding: 20px;
-        margin-bottom: 20px; /* Espaço entre os projetos */
+        margin-bottom: 20px;
+        /* background-color: #f8f8f8; */
+        /* color: #333;  Cor do texto - mais escura para melhor contraste */
+        border-radius: 8px;
+        /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+        background-color: #34495E;
+            
+            
     }
 
+    .projects iframe {
+        width: 100%; /* Ajusta o iframe para caber na tela */
+        height: 300px; /* Ajusta a altura do Power BI */
+        border: none;
+    }
+
+    /* Ajuste na altura do botão de contato */
     .contact button {
         padding: 12px;
     }
 }
+
 </style>
     </style>
 </head>
@@ -542,6 +583,16 @@
 
             // Exibe a seção clicada
             document.getElementById(sectionId).classList.add('active');
+
+                // Remove a classe 'active-link' de todos os links
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active-link'));
+
+            // Adiciona a classe 'active-link' ao link correspondente
+            const activeLink = document.querySelector(`nav a[href="javascript:void(0);"][onclick="showSection('${sectionId}')"]`);
+            if (activeLink) {
+                activeLink.classList.add('active-link');
+            }
 
             // Opcional: rolar suavemente até a seção
             document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
