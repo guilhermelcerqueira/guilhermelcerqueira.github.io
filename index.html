@@ -6,7 +6,11 @@
     <meta name="description" content="Portfólio de Análise de Dados - Guilherme Cerqueira">
     <title>Guilherme Cerqueira - Portfólio de Análise de Dados</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://e7.pngegg.com/pngimages/1000/19/png-clipart-github-logo-computer-icons-source-code-github-white-cat-like-mammal.png" type="image/png">
+
     <style>
+
+
         /* Estilo para o link ativo na navegação */
         nav a.active-link {
         background-color: #16A085;
@@ -35,9 +39,10 @@
         header {
             background-color: #2D3E50;
             color: #F0F4F8;
-            padding: 80px 20px;
+            padding: 60px 20px;
             text-align: center;
             position: relative;
+            
         }
 
         header .header-content {
@@ -46,19 +51,19 @@
         }
 
         header .profile-image {
-            width: 130px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             border-radius: 80%;
             margin-bottom: 15px;
         }
 
         header h1 {
-            font-size: 2.5em;
+            font-size: 2em;
             font-weight: 700;
         }
 
         header p {
-            font-size: 1.3em;
+            font-size: 1.1em;
             font-weight: 300;
             margin-top: 15px;
         }
@@ -97,6 +102,10 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            top: 0;
+
+            
+            
         }
         nav a {
             color: #BDC3C7;
@@ -118,7 +127,7 @@
             padding: 60px 20px;
             margin: 0 auto;
             max-width: 1200px;
-            display: none; /* Inicialmente todas as seções são ocultas */
+            /* display: none; Inicialmente todas as seções são ocultas */
         }
 
         section.active {
@@ -150,6 +159,8 @@
             margin-right: 10px;
         }
 
+        
+
         .projects ul {
             display: grid;
             grid-template-columns: repeat(2, 1fr); /* Duas colunas */
@@ -169,7 +180,7 @@
 
  /* Seção de Contato */
         #contato {
-            width: 80%; /* Faz a seção ocupar mais espaço na tela */
+            width: 100%; /* Faz a seção ocupar mais espaço na tela */
             margin: 0 auto; /* Centraliza na página */
         }
 
@@ -285,7 +296,7 @@
     }
 
     .tool {
-        width: 100%;
+        width: 90%;
         text-align: center;
     }
 
@@ -410,6 +421,7 @@
         <h2>Ferramentas e Tecnologias 💻</h2>
         <div class="tools">
             <div class="tool">
+                
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" 
                      alt="Python" title="Python"/>
                 <p><strong>Python:</strong> Linguagem poderosa para análise, manipulação e modelagem de dados.</p>
@@ -450,7 +462,7 @@
     <style>
         /* Centraliza o título na página */
         #ferramentas {
-            width: 80%;
+            width: 100%;
             margin: 0 auto;
         }
     
@@ -490,8 +502,10 @@
         <h2>Projetos Realizados</h2>
         <div class="projects">
             <ul>
+                
                 <li>
                     <h3>
+                        
                         <a href="https://app.powerbi.com/view?r=eyJrIjoiNmUyMGQyMjEtMTlhMy00YWRlLWJiZGQtMTZmMTYyNmMwOTMwIiwidCI6IjFjZWQ5ZDZjLWM2OTktNGMxYS1hYjlkLTI1YWY1MzI0ZGMyYSJ9" target="_blank">
                             Projeto de Análise de Vendas
                         </a>
@@ -603,14 +617,38 @@
                 activeLink.classList.add('active-link');
             }
 
-            // Opcional: rolar suavemente até a seção
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-        }
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'auto' 
+            });
 
-        // Exibe a seção inicial (Quem sou eu)
+            // Seleciona a barra de navegação
+            var navHeight = document.querySelector('nav').offsetHeight; 
+
+            // Calcula a posição de scroll considerando a altura da barra de navegação
+            window.scrollTo({
+                top: document.getElementById(sectionId).offsetTop - navHeight , // Ajuste para a altura da navegação
+                behavior: 'smooth'
+            });
+        }
+            // Exibe a seção inicial (Quem sou eu)
         document.addEventListener('DOMContentLoaded', function() {
-            showSection('sobre');
+            // Exibe a seção inicial, caso você queira uma seção específica ao carregar
+            showSection('sobre'); // Por exemplo, altera para uma seção específica
+            window.scrollTo(0, 10);
         });
+
+            // Responsividade - Certifique-se que a barra de navegação se ajuste para dispositivos móveis
+        window.addEventListener('resize', function() {
+            const navHeight = document.querySelector('nav').offsetHeight;
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                // Ajusta a altura da seção considerando a barra de navegação
+                section.style.paddingTop = navHeight +'px';
+            });
+        });
+        
+
+
     </script>
 
 </body>
