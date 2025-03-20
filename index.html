@@ -403,7 +403,6 @@
     </section>
 
 <!-- Seção Contato -->
-<!-- Seção Contato -->
 <section id="contato" class="contact">
     <h2>Contato</h2>
 
@@ -413,38 +412,48 @@
         <input type="email" name="email" placeholder="Seu E-mail" required />
         <textarea name="message" placeholder="Mensagem" rows="5" required></textarea>
 
-        <!-- Desativa o Captcha do FormSubmit -->
+        <!-- Evita o Captcha do FormSubmit -->
         <input type="hidden" name="_captcha" value="false">
+
+        <!-- Impede o carregamento infinito, redirecionando para a mesma página -->
+        <input type="hidden" name="_next" value="">
 
         <button type="submit">Enviar Mensagem</button>
     </form>
 
-<!-- Mensagem de Sucesso (Oculta por padrão) -->
-<div id="successMessage" style="display: none; text-align: center;">
-    <h3>✅ Obrigado! Sua mensagem foi enviada com sucesso.</h3>
-    <button onclick="voltarFormulario()" style="margin-top: 20px;">OK</button>
-</div>
+    <!-- Mensagem de Sucesso (Oculta por padrão) -->
+    <div id="successMessage" style="display: none; text-align: center;">
+        <h3>✅ Obrigado! Sua mensagem foi enviada com sucesso.</h3>
+        <button onclick="voltarFormulario()" style="margin-top: 20px;">OK</button>
+    </div>
 </section>
 
 <script>
     document.getElementById("contactForm").addEventListener("submit", function(event) {
         event.preventDefault(); // Impede o recarregamento da página
 
-        // Esconde o formulário e exibe a mensagem de sucesso
-        document.getElementById("contactForm").style.display = "none";
+        // Oculta o formulário e exibe a mensagem de sucesso
+        this.style.display = "none";
         document.getElementById("successMessage").style.display = "block";
 
-        // Envia o formulário manualmente
-        this.submit();
+        // Envia o formulário manualmente sem carregar a página
+        fetch(this.action, {
+            method: this.method,
+            body: new FormData(this)
+        }).then(response => {
+            console.log("Mensagem enviada com sucesso!");
+        }).catch(error => console.error("Erro ao enviar:", error));
     });
 
     function voltarFormulario() {
-        // Exibe o formulário novamente e esconde a mensagem de sucesso
-        document.getElementById("contactForm").reset(); // Limpa os campos
-        document.getElementById("contactForm").style.display = "block";
-        document.getElementById("successMessage").style.display = "none";
+        // Limpa os campos e faz o formulário reaparecer corretamente
+        let form = document.getElementById("contactForm");
+        form.reset(); // Limpa os campos
+        form.style.display = "flex"; // Mantém o layout correto do formulário
+        document.getElementById("successMessage").style.display = "none"; // Oculta a mensagem de sucesso
     }
 </script>
+
 
 
     <!-- Rodapé -->
