@@ -185,7 +185,7 @@
         section {
             padding: 12px;
             margin: 0 auto;
-            max-width: 1200px;
+            max-width: 1500px;
             /* display: none; Inicialmente todas as seções são ocultas */
         }
 
@@ -294,16 +294,28 @@
         }
 /* Responsividade - Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
+    header {
+        padding: 15px 10px; /* Diminuir o padding */
+    }
     /* Navegação */
     nav {
         flex-direction: column;
         align-items: center;
-        padding: 40px;
+        padding: 10 px 0;
     }
 
     nav a {
         padding: 10px 0;
         font-size: 1.2em;
+        background-color: transparent;  /* Garante que o fundo não seja alterado */
+        margin: 5px 0; /* Reduzir o espaçamento entre os links */
+    
+    }
+
+       /* Remover efeito de hover nos links da navegação em dispositivos móveis */
+    nav a:hover {
+        background-color: transparent;  /* Remove o efeito de hover */
+        color: #BDC3C7;  /* Garante que a cor do texto não mude no hover */
     }
 
     /* Cabeçalho */
