@@ -25,12 +25,16 @@
             cursor: pointer;
             margin-top: 20px;
             transition: background-color 0.3s ease;
+            display: block; /* Garante que o botão seja tratado como um bloco */
+            margin-left: auto; /* Centraliza o botão horizontalmente */
+            margin-right: auto; /* Centraliza o botão horizontalmente */
         }
 
         .toggle-button:hover {
             background-color: #16A085;  /* Cor de hover igual aos links de navegação */
             color: #ffffff;
         }
+
 
 
         /* Estilo para o link ativo na navegação
@@ -376,68 +380,75 @@
         
 
 
- /* Seção de Contato */
-        #contato {
-            padding: 13px;
-            margin: 0 auto;
-            width: 95%;               /* Largura de 80% da página */
-            max-width: 1500px;        /* Max-width para limitar a largura máxima */
-            transition: padding-top 0.3s ease; /* Transição suave para o padding */
-            background-color: #34495E;   /* Cor de fundo suave */
-            border-radius: 5px;          /* Bordas arredondadas */
-            border: 2px solid rgba(255, 255, 255, 0.2);  /* Bordas brancas suaves e discretas */
-            margin-bottom: 20px;         /* Espaçamento abaixo da seção */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);  /* Sombra mais visível com maior desfoque */
-            transition: box-shadow 0.3s ease, border 0.3s ease; /* Suavizar transições */
-        }
+/* Seção de Contato */
+#contato {
+    padding: 13px;
+    margin: 0 auto;
+    width: 95%;               /* Largura de 80% da página */
+    max-width: 1500px;        /* Max-width para limitar a largura máxima */
+    transition: padding-top 0.3s ease; /* Transição suave para o padding */
+    background-color: #34495E;   /* Cor de fundo suave */
+    border-radius: 5px;          /* Bordas arredondadas */
+    border: 2px solid rgba(255, 255, 255, 0.2);  /* Bordas brancas suaves e discretas */
+    margin-bottom: 20px;         /* Espaçamento abaixo da seção */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);  /* Sombra mais visível com maior desfoque */
+    transition: box-shadow 0.3s ease, border 0.3s ease; /* Suavizar transições */
+    text-align: center;
 
-        /* Formulário de Contato */
-        .contact form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            width: 100%; /* Agora ocupa toda a largura da seção */
-            max-width: 940px; /* Definindo uma largura máxima para o formulário */
-            margin: 0 ; /* Centraliza o formulário na tela */
-            padding: 15px; /* Espaçamento interno para o formulário */
-            box-sizing: border-box;/* Garante que o padding não afete a largura total */
-        }
+    /* Centralizando a seção dentro da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center;     /* Centraliza o conteúdo horizontalmente */
+    min-height: 400px;       /* Garante que a seção tenha uma altura mínima */
+}
 
-        /* Inputs e Textarea */
-        .contact input, .contact textarea {
-            padding: 15px;
-            border: 2px solid rgba(255, 255, 255, 0.2);  /* Borda leve e suave */
-            border-radius: 5px;
-            font-size: 1em;
-            width: 100%;  /* Garante que ocupe toda a largura do formulário */
-            font-family: inherit; /* Mantém a mesma fonte do restante */
-            box-sizing: border-box; /* Garante que o padding não afete a largura */
-            background-color: transparent; /* Fundo transparente */
-            color: #fff;  /* Cor do texto branco */
-        }
+/* Formulário de Contato */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 95%; /* Agora ocupa toda a largura da seção */
+    max-width: 940px; /* Definindo uma largura máxima para o formulário */
+    margin: 0 ; /* Centraliza o formulário na tela */
+    padding: 15px; /* Espaçamento interno para o formulário */
+    box-sizing: border-box;/* Garante que o padding não afete a largura total */
+    text-align: center;
+}
 
-        /* Estilizando o texto de placeholder (Texto de fundo) */
-        .contact input::placeholder, .contact textarea::placeholder {
-            color: #ffffff;   /* Cor do texto de placeholder */
-            opacity: 0.7;      /* Opacidade para o texto de placeholder */
-        }
+/* Inputs e Textarea */
+.contact input, .contact textarea {
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);  /* Borda leve e suave */
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;  /* Garante que ocupe toda a largura do formulário */
+    font-family: inherit; /* Mantém a mesma fonte do restante */
+    box-sizing: border-box; /* Garante que o padding não afete a largura */
+    background-color: transparent; /* Fundo transparente */
+    color: #fff;  /* Cor do texto branco */
+}
 
+/* Estilizando o texto de placeholder (Texto de fundo) */
+.contact input::placeholder, .contact textarea::placeholder {
+    color: #ffffff;   /* Cor do texto de placeholder */
+    opacity: 0.7;      /* Opacidade para o texto de placeholder */
+}
 
+.contact button {
+    padding: 15px;
+    background-color: #16A085;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        .contact button {
-            padding: 15px;
-            background-color: #16A085;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact button:hover {
-            background-color: #1ABC9C;
-        }
+.contact button:hover {
+    background-color: #1ABC9C;
+}
 
         /* Rodapé */
         footer {
@@ -520,9 +531,7 @@
     }
 
   /* Esconder os ícones de contato (LinkedIn, Email, WhatsApp) no celular */
-    .contact-icons {
-        display: none !important; /* Esconde os ícones de contato no celular */
-    }
+
 
     /* Em telas maiores (acima de 768px), esconder o ícone de menu */
     @media (min-width: 769px) {
@@ -544,7 +553,7 @@
 
     /* Seção de Contato */
     #contato {
-        width: 90%;
+        width: 95%;
         padding: 0 10px;
     }
 
@@ -1046,15 +1055,21 @@
                 const navHeight = nav.offsetHeight;  // Recalcula a altura do nav
                 document.body.style.paddingTop = `${navHeight}px`; // Ajusta o espaço abaixo do nav
             });
+
+            // Adiciona a funcionalidade de fechamento do menu ao clicar nos links
+            const navLinks = document.querySelectorAll('nav .nav-right a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');  // Fecha o menu removendo a classe 'active'
+                });
+            });
         });
 
+        // Função para alternar o menu (abrir/fechar)
         function toggleMenu() {
             const nav = document.querySelector('nav');
             nav.classList.toggle('active'); // Alterna a classe 'active' para mostrar/ocultar o menu
         }
-
-
-        
     </script>
 
 </body>
