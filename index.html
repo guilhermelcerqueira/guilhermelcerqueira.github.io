@@ -178,15 +178,30 @@
         .contact-box input:focus, .contact-box textarea:focus { border-color: #1ABC9C; outline: none; }
         .contact-box button { width: 100%; }
 
-        /* ================= RESPONSIVE ================= */
+        
+/* ================= RESPONSIVO ================= */
         @media (max-width: 900px) {
             .hero h1 { font-size: 2.5em; }
             .hero-buttons { flex-direction: column; width: 100%; }
             .premium-header { flex-direction: column; align-items: flex-start; }
-            nav { padding: 0 20px; }
+            
+            /* Ajusta o padding lateral da barra inteira */
+            nav { padding: 0 20px; } 
+            
+            /* Diminui o espaço entre o logo, ícones e a bandeira para não espremer o menu */
+            .nav-left { gap: 10px; } 
+            .lang-toggle { margin-left: 5px; padding: 5px 8px; } /* Deixa o botão de idioma um pouco mais compacto */
+            
             .nav-right { display: none; }
-            .menu-icon-container { display: block; cursor: pointer; }
-            .menu-icon-container img { width: 30px; filter: invert(1); }
+            
+            /* Traz as barrinhas do menu mais para a esquerda, afastando da borda */
+            .menu-icon-container { 
+                display: block; 
+                cursor: pointer; 
+                margin-right: 5px; /* Se quiser afastar mais da borda, aumente para 10px ou 15px */
+            }
+            .menu-icon-container img { width: 32px; filter: invert(1); }
+            
             nav.active .nav-right {
                 display: flex; flex-direction: column; position: absolute; top: 65px; left: 0;
                 width: 100%; background: #1E2A36; padding: 20px 0; border-bottom: 2px solid #1ABC9C;
